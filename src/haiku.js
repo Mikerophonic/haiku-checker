@@ -18,7 +18,9 @@ Haiku.prototype.countSyllables = function(array) {
     let syllableCount = 0;
 
     array.forEach(function(word) {
-        if ((word.match(/[aeiou]/gi).length === 1) || word.match(/e$/i)) {
+        if ((word.match(/[aeiou]/gi).length === 1) || 
+        word.match(/e$/i) || 
+        word.match(/ai|ae|ao|au|ea|ei|eo|eu|ia|ie|io|iu|oa|oe|oi|ou|ua|ue|ui|uo/gi)){
             syllableCount++;
         }
     });

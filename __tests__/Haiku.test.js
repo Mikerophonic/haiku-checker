@@ -27,8 +27,15 @@ describe('Haiku', () => {
         expect(haiku.countSyllables(haiku.words3)).toEqual(4);
 
     });
-    test('It should count two vowel words as one syllable if the e at the end is silent', () => {
+    test('It should count two vowel words as one syllable if the "e" at the end is silent', () => {
         haiku = new Haiku("a bone plant", "tone cat", "dog rate sat tin");
+        haiku.makeArray();
+        expect(haiku.countSyllables(haiku.words1)).toEqual(3);
+        expect(haiku.countSyllables(haiku.words2)).toEqual(2);
+        expect(haiku.countSyllables(haiku.words3)).toEqual(4);
+    });
+    test('It should check to see if the word contains a diphthong.' , () => {
+        haiku = new Haiku("a bone bread", "coin cat", "dog rate loud tin");
         haiku.makeArray();
         expect(haiku.countSyllables(haiku.words1)).toEqual(3);
         expect(haiku.countSyllables(haiku.words2)).toEqual(2);
