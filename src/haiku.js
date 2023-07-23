@@ -12,4 +12,28 @@ Haiku.prototype.makeArray = function() {
     this.words2 = array2;
     this.words3 = array3;
 };
-      
+
+Haiku.prototype.countVowels = function (array1, array2, array3) {
+    let vowelCountingArray1 = [];
+    let vowelCountingArray2 = [];
+    let vowelCountingArray3 = [];
+    for (let i = 0; i < array1.length; i++) {
+        let vowelCount = array1[i].match(/[aeiou]/gi).length;
+        vowelCountingArray1.push(vowelCount);
+    }
+    for (let i = 0; i < array2.length; i++) {
+        let vowelCount = array2[i].match(/[aeiou]/gi).length;
+        vowelCountingArray2.push(vowelCount);
+    }
+    for (let i = 0; i < array3.length; i++) {
+        let vowelCount = array3[i].match(/[aeiou]/gi).length;
+        vowelCountingArray3.push(vowelCount);
+    }
+    this.vowelCountArray1 = vowelCountingArray1;
+    this.vowelCountArray2 = vowelCountingArray2;
+    this.vowelCountArray3 = vowelCountingArray3;
+
+Haiku.prototypecountSyllables
+
+};
+

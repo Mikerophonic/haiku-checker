@@ -20,13 +20,17 @@ describe('Haiku', () => {
     });
     test('It should count the vowels in each word', () => {
         haiku = new Haiku("a the plant", "ton cat", "dog rat sat tin");
-        haiku.countVowels();
-        expect(haiku.line1Vowels).toEqual([1, 1, 1]);
-        expect(haiku.line2Vowels).toEqual([1, 1]);
-        expect(haiku.line3Vowels).toEqual([1, 1, 1, 1]);
+        haiku.makeArray();
+        haiku.countVowels(haiku.words1, haiku.words2, haiku.words3);
+        expect(haiku.vowelCountArray1).toEqual([1, 1, 1]);
+        expect(haiku.vowelCountArray2).toEqual([1, 1]);
+        expect(haiku.vowelCountArray3).toEqual([1, 1, 1, 1]);
+
     });
-    // test('It should count one vowel words and add it to syllable counter', () => {
-    //     haiku = new Haiku("a the plant", "ton cat", "dog rat sat tin");
-    //     haiku.vowelCount
-    // });
+    test('It should count one vowel words and add it to syllable counter', () => {
+        haiku = new Haiku("a the plant", "ton cat", "dog rat sat tin");
+        haiku.makeArray();
+        haiku.countVowels(haiku.words1, haiku.words2, haiku.words3);
+        haiku.countSyllables()
+    });
 });
