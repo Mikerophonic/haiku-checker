@@ -17,13 +17,14 @@ Haiku.prototype.countSyllables = function(array) {
     let syllableCount = 0;
 
     array.forEach(function(word) {
-        const singleVowel = word.match(/[aeiou]/gi);
+        const countVowel = word.match(/[aeiou]/gi);
+        const vowelLength = countVowel ? countVowel.length : 0;
         const silentE = word.match(/e$/i);
         const diphthong = word.match(/ai|ae|ao|au|ea|ei|eo|eu|ia|ie|io|iu|oa|oe|oi|ou|ua|ue|ui|uo/gi);
-        const onlyY = !singleVowel && word.match(/[y]/i);
-        const endsInEd = 
-        const endsInEs = silentE + s;
-        if (singleVowel || silentE || diphthong || onlyY) {
+        const onlyY = !countVowel && word.match(/[y]/i);
+        const endsInEd = word.match(/ed$/i);
+        const endsInEs = word.match(/es$/i);
+        if ((vowelLength === 1) || silentE || diphthong || onlyY || endsInEd || endsInEs) {
             syllableCount++;
         }
     });

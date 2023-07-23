@@ -49,7 +49,7 @@ describe('Haiku', () => {
         expect(haiku.countSyllables(haiku.words3)).toEqual(8);
     });
     test('It should count words ending in "es" and "ed" as one syllable' , () => {
-        haiku = new Haiku("a bone bread gym fixed", "coin breathe my grazed", "dog rate loud tin dry cry by spy rakes");
+        haiku = new Haiku("a bone bread gym fixed", "coin breathe my grazed", "dog rate loud tin dry bork by spy rakes");
         haiku.makeArray();
         expect(haiku.countSyllables(haiku.words1)).toEqual(5);
         expect(haiku.countSyllables(haiku.words2)).toEqual(4);
