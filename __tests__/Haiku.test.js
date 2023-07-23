@@ -31,6 +31,15 @@ describe('Haiku', () => {
         haiku = new Haiku("a the plant", "ton cat", "dog rat sat tin");
         haiku.makeArray();
         haiku.countVowels(haiku.words1, haiku.words2, haiku.words3);
-        haiku.countSyllables()
+        expect(haiku.countSyllables(haiku.vowelCountArray1)).toEqual(3);
+        expect(haiku.countSyllables(haiku.vowelCountArray2)).toEqual(2);
+        expect(haiku.countSyllables(haiku.vowelCountArray3)).toEqual(4);
+
+    });
+    test('It should count two vowel words as one syllable if the e at the end is silent', () => {
+        haiku = new Haiku("a bone plant", "tone cat", "dog rate sat tin");
+        haiku.makeArray();
+        haiku.countVowels(haiku.words1, haiku.words2, haiku.words3);
+
     });
 });

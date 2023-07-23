@@ -32,8 +32,19 @@ Haiku.prototype.countVowels = function (array1, array2, array3) {
     this.vowelCountArray1 = vowelCountingArray1;
     this.vowelCountArray2 = vowelCountingArray2;
     this.vowelCountArray3 = vowelCountingArray3;
+}
+Haiku.prototype.countSyllables = function(array) {
+    let syllableCount = 0
 
-Haiku.prototypecountSyllables
+    array.forEach(function(count) {
+        if (count === 1) {
+            syllableCount++
+        }
+    });
 
-};
+    return syllableCount;
+
+}
+
+
 
