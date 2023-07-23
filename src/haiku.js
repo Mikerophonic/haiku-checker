@@ -13,19 +13,19 @@ Haiku.prototype.makeArray = function() {
     this.words3 = array3;
 };
 
-
 Haiku.prototype.countSyllables = function(array) {
     let syllableCount = 0;
 
     array.forEach(function(word) {
-        if ((word.match(/[aeiou]/gi).length === 1) || 
-        word.match(/e$/i) || 
-        word.match(/ai|ae|ao|au|ea|ei|eo|eu|ia|ie|io|iu|oa|oe|oi|ou|ua|ue|ui|uo/gi)){
+        const singleVowel = word.match(/[aeiou]/gi);
+        const silentE = word.match(/e$/i);
+        const diphthong = word.match(/ai|ae|ao|au|ea|ei|eo|eu|ia|ie|io|iu|oa|oe|oi|ou|ua|ue|ui|uo/gi);
+        const onlyY = !singleVowel && word.match(/[y]/i);
+        const endsInEd = 
+        const endsInEs = silentE + s;
+        if (singleVowel || silentE || diphthong || onlyY) {
             syllableCount++;
         }
     });
-
     return syllableCount;
-
 }
-
